@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USDT receiving address</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#06100d;
+    --bg-1:#0b1a15;
+    --surface:#0f231c;
+    --surface-2:#132b22;
+    --line:rgba(120,200,170,0.14);
+    --line-strong:rgba(120,200,170,0.28);
+    --teal:#26a17b;
+    --teal-bright:#3fd6a3;
+    --tron-red:#ff2c3a;
+    --text-1:#eaf5f0;
+    --text-2:#93b3a7;
+    --text-3:#5d7d72;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 50% -10%, rgba(38,161,123,0.16), transparent 55%),
+      var(--bg-0);
+    color:var(--text-1);
+    font-family:'Inter', system-ui, sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 18px;
+  }
+
+  .card{
+    width:100%;
+    max-width:420px;
+    background:var(--surface);
+    border:0.5px solid var(--line);
+    border-radius:20px;
+    padding:32px 26px 28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    top:-60%; right:-30%;
+    width:220px; height:220px;
+    background:radial-gradient(circle, rgba(38,161,123,0.22), transparent 70%);
+    pointer-events:none;
+  }
+
+  .badge-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:22px;
+  }
+  .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--teal-bright);
+    box-shadow:0 0 0 4px rgba(63,214,163,0.15);
+  }
+  .badge-text{
+    font-size:13px;
+    color:var(--text-2);
+    letter-spacing:0.02em;
+  }
+
+  h1{
+    text-align:center;
+    font-size:20px;
+    font-weight:700;
+    margin:0 0 6px;
+    color:var(--text-1);
+  }
+  .sub{
+    text-align:center;
+    font-size:14px;
+    color:var(--text-2);
+    margin:0 0 26px;
+    line-height:1.7;
+  }
+
+  .addr-box{
+    background:var(--surface-2);
+    border:0.5px solid var(--line-strong);
+    border-radius:14px;
+    padding:16px 16px 14px;
+    margin-bottom:14px;
+  }
+  .addr-label{
+    font-size:11px;
+    color:var(--text-3);
+    margin:0 0 8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .network-chip{
+    font-size:10px;
+    padding:2px 8px;
+    border-radius:100px;
+    background:rgba(255,44,58,0.12);
+    color:#ff6b76;
+    border:0.5px solid rgba(255,44,58,0.25);
+    font-family:'JetBrains Mono', monospace;
+  }
+  .addr-text{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--text-1);
+    word-break:break-all;
+    text-align:left;
+  }
+
+  button.copy-btn{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 16px;
+    background:var(--teal);
+    color:#04140f;
+    border:none;
+    border-radius:12px;
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background 0.15s ease, transform 0.1s ease;
+  }
+  button.copy-btn:hover{ background:var(--teal-bright); }
+  button.copy-btn:active{ transform:scale(0.98); }
+  button.copy-btn svg{ width:18px; height:18px; flex-shrink:0; }
+
+  .foot{
+    margin-top:22px;
+    text-align:center;
+  }
+  .foot-label{
+    font-size:12px;
+    color:var(--text-3);
+    margin:0 0 4px;
+  }
+  .foot-name{
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:0.03em;
+    color:var(--text-1);
+  }
+  .foot-name .usdt{ color:var(--teal-bright); }
+  .foot-name .tron{ color:#ff6b76; }
+
+  @media (prefers-reduced-motion: no-preference){
+    button.copy-btn{ transition:background 0.15s ease, transform 0.1s ease; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="badge-row">
+    <span class="dot"></span>
+    <span class="badge-text">Active receiving address</span>
+  </div>
+
+  <h1>Thank you for your help and support</h1>
+  <p class="sub">Send only on the TRON (TRC20) network. Funds sent on any other network cannot be recovered.</p>
+
+  <div class="addr-box">
+    <p class="addr-label">
+      <span>Wallet address</span>
+      <span class="network-chip">TRC20</span>
+    </p>
+    <p class="addr-text" id="addr">TEjgjSR6FcBnteaWdzSvwQqdX57bM4QDUP</p>
+  </div>
+
+  <button class="copy-btn" id="copyBtn" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    <span id="copyLabel">Copy address</span>
+  </button>
+
+  <div class="foot">
+    <p class="foot-label">Receiving</p>
+    <p class="foot-name"><span class="usdt">USDT</span> · <span class="tron">TRON</span></p>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('copyBtn');
+  const label = document.getElementById('copyLabel');
+  const addr = document.getElementById('addr').textContent.trim();
+
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(addr);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = addr;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    label.textContent = 'Copied';
+    setTimeout(() => { label.textContent = 'Copy address'; }, 1800);
+  });
+</script>
+
+</body>
+</html>
